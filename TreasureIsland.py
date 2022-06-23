@@ -1,6 +1,8 @@
 # Written 6/23/2022
 # Day 3 Project of 100 Days of Code
 
+# Short game that runs based off of simple choices made by player. Tests conditionals.
+
 from turtle import left
 
 
