@@ -81,8 +81,3 @@ for i in range(0, pass_len):
     
 final_pass = ''.join(pass_list)
 print(final_pass)
-print(len(pass_list))
-print(pass_len)
-print(nr_letters_check)
-print(nr_numbers_check)
-print(nr_symbols_check)
