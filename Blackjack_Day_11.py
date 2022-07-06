@@ -17,23 +17,50 @@ def check_user_hand():
     '''
     Function that checks the user hand's value.
     '''
-    if cards.get(user_hand[0]) + cards.get(user_hand[1]) == 21:
-        print("blackjack")
-    else:
-        print("not blackjack")
-
-    print(user_hand)
-    print(cards.get(user_hand[0]) + cards.get(user_hand[1]))
+    # print(user_hand)
+    # print(cards.get(user_hand[0]) + cards.get(user_hand[1]))
+    return (cards.get(user_hand[0]) + cards.get(user_hand[1]))
+    # if cards.get(user_hand[0]) + cards.get(user_hand[1]) == 21:
+    #     return True
+    # elif cards.get(user_hand[0]) + cards.get(user_hand[1]) < 21:
+    #     return cards.get(user_hand[0]) + cards.get(user_hand[1])
+    # else:
+    #     return False
 
 def check_comp_hand():
     '''
     Function that checks the computer hand's value.
     '''
-    if cards.get(comp_hand[0]) + cards.get(comp_hand[1]) == 21:
-        print("blackjack")
-    else:
-        print("not blackjack")
+    # print(comp_hand)
+    # print(cards.get(comp_hand[0]) + cards.get(comp_hand[1]))
+    return (cards.get(comp_hand[0]) + cards.get(comp_hand[1]))
+    # if cards.get(comp_hand[0]) + cards.get(comp_hand[1]) == 21:
+    #     return True
+    # elif cards.get(comp_hand[0]) + cards.get(comp_hand[1]) < 21:
+    #     return cards.get(comp_hand[0]) + cards.get(comp_hand[1])
+    # else:
+    #     return False
 
+def blackjack_game():
+    print("Computer hand:")
     print(comp_hand)
-    print(cards.get(comp_hand[0]) + cards.get(comp_hand[1]))
+    print(check_comp_hand())
+    # print(cards.get(comp_hand[0]) + cards.get(comp_hand[1]))
 
+    print("User hand:")
+    print(user_hand)
+    print(check_user_hand())
+    # print(cards.get(user_hand[0]) + cards.get(user_hand[1]))
+
+    if check_comp_hand() == 21:
+        print("User loses!")
+    elif check_user_hand() == 21:
+        print("You win!")
+    elif check_comp_hand() == check_user_hand():
+        print("You draw.")
+    elif check_comp_hand() > check_user_hand():
+        print("User loses.")
+    elif check_comp_hand() < check_user_hand():
+        print("You win!")
+
+blackjack_game()
