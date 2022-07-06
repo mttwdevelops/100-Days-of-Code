@@ -13,11 +13,27 @@ cards = {"Ace": 11, "One": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5, "Six":
 user_hand = [random.choice(list(cards)), random.choice(list(cards))]
 comp_hand = [random.choice(list(cards)), random.choice(list(cards))]
 
-# checks if the function is = 21. Will wrap in function to use later but for now is used for testing purposes.
-if cards.get(user_hand[0]) + cards.get(user_hand[1]) == 21:
-    print("blackjack")
-else:
-    print("not blackjack")
+def check_user_hand():
+    '''
+    Function that checks the user hand's value.
+    '''
+    if cards.get(user_hand[0]) + cards.get(user_hand[1]) == 21:
+        print("blackjack")
+    else:
+        print("not blackjack")
 
-print(user_hand)
-print(cards.get(user_hand[0]) + cards.get(user_hand[1]))
+    print(user_hand)
+    print(cards.get(user_hand[0]) + cards.get(user_hand[1]))
+
+def check_comp_hand():
+    '''
+    Function that checks the computer hand's value.
+    '''
+    if cards.get(comp_hand[0]) + cards.get(comp_hand[1]) == 21:
+        print("blackjack")
+    else:
+        print("not blackjack")
+
+    print(comp_hand)
+    print(cards.get(comp_hand[0]) + cards.get(comp_hand[1]))
+
