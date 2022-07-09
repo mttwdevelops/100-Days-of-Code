@@ -5,7 +5,6 @@
 
 import os
 import random
-from re import A
 import higherlower_data
 
 logo = """
@@ -29,31 +28,34 @@ vs = """
 """
 
 alive = True
+a = random.choice(higherlower_data.data)
+
 while alive:
     os.system('cls')
     print(logo)
-    a = random.choice(higherlower_data.data)
     b = random.choice(higherlower_data.data)
+    if a == b:
+        b = random.choice(higherlower_data.data)
 
     # print(a)
     # print(b)
 
     print(f"Compare A: {a['name']}, a {a['description']}, from {a['country']}.\n\n")
+    # print(f"A: {a['follower_count']}")
     print(f"Compare B: {b['name']}, a {b['description']}, from {b['country']}.\n\n")
-    guess = input("Who has more followers? Type \'A\' or \'B\': ")
+    # print(f"B: {b['follower_count']}")
+    guess = input("Who has more followers? Type \'A\' or \'B\': ").lower()
     
-    if guess == "A":
-        if a['followers'] > b['followers']:
+    if guess == "a":
+        if a["follower_count"] >= b["follower_count"]:
             pass
         else:
-            print(f"That was incorrect. Person B had {b['followers']}, while Persona A had {a['followers']}.")
-            alive = False
-    else:
-        if a['followers'] > b['followers']:
-            pass
-        else:
-            print(f"That was incorrect. Person A had {A['followers']}, while Persona B had {b['followers']}.")
+            print(f"That was incorrect. Person B had {b['follower_count']} million followers, while Persona A had {a['follower_count']} million followers.")
             alive = False
 
-# TODO: need to figure out how to set a = b
-# TODO: need to figure out conditionals
+    else:
+        if b["follower_count"] >= a["follower_count"]:
+            a = b
+        else:
+            print(f"That was incorrect. Person A had {a['follower_count']} million followers, while Persona B had {b['follower_count']} million followers.")
+            alive = False
