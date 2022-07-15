@@ -48,14 +48,14 @@ while alive:
     
     if guess == "a":
         if a["follower_count"] >= b["follower_count"]:
-            pass
+            continue
         else:
-            print(f"That was incorrect. Person B had {b['follower_count']} million followers, while Persona A had {a['follower_count']} million followers.")
+            print(f"That was incorrect. Person B had {b['follower_count']} million followers, while Person A had {a['follower_count']} million followers.")
             alive = False
 
     else:
         if b["follower_count"] >= a["follower_count"]:
             a = b
         else:
-            print(f"That was incorrect. Person A had {a['follower_count']} million followers, while Persona B had {b['follower_count']} million followers.")
+            print(f"That was incorrect. Person A had {a['follower_count']} million followers, while Person B had {b['follower_count']} million followers.")
             alive = False
